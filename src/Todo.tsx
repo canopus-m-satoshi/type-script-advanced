@@ -1,9 +1,7 @@
+import { VFC } from 'react';
 import { TodoType } from './types/toso';
 
-export const Todo = (
-  // props: Pick<TodoType, 'userId' | 'title' | 'completed'>, PICkで必要な情報のみ抽出
-  props: Omit<TodoType, 'id'>, // Omitで不要な情報を除く
-) => {
+export const Todo: VFC<Omit<TodoType, 'id'>> = (props) => {
   const { title, userId, completed = false } = props;
   const comoletMark = completed ? '[完]' : '[未]';
 
